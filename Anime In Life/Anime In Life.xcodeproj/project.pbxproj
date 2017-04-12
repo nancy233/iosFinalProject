@@ -19,6 +19,9 @@
 		B9528D491E823162008EDFE0 /* AnimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9528D481E823162008EDFE0 /* AnimeViewController.swift */; };
 		B9528D4B1E8242D1008EDFE0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9528D4A1E8242D1008EDFE0 /* MapViewController.swift */; };
 		B9528D4D1E824316008EDFE0 /* ScenesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9528D4C1E824316008EDFE0 /* ScenesViewController.swift */; };
+		B9D240D61E971032005923EC /* animeLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D240D51E971032005923EC /* animeLocations.swift */; };
+		B9D240D81E971723005923EC /* ScenesFromMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D240D71E971723005923EC /* ScenesFromMapViewController.swift */; };
+		B9D240DA1E9719B4005923EC /* RegionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D240D91E9719B4005923EC /* RegionCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,9 @@
 		B9528D481E823162008EDFE0 /* AnimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimeViewController.swift; sourceTree = "<group>"; };
 		B9528D4A1E8242D1008EDFE0 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B9528D4C1E824316008EDFE0 /* ScenesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScenesViewController.swift; sourceTree = "<group>"; };
+		B9D240D51E971032005923EC /* animeLocations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = animeLocations.swift; sourceTree = "<group>"; };
+		B9D240D71E971723005923EC /* ScenesFromMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScenesFromMapViewController.swift; sourceTree = "<group>"; };
+		B9D240D91E9719B4005923EC /* RegionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegionCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				B9528D121E821773008EDFE0 /* AppDelegate.swift */,
+				B9D240D51E971032005923EC /* animeLocations.swift */,
 				B9528D141E821773008EDFE0 /* ViewController.swift */,
 				B9528D161E821773008EDFE0 /* Main.storyboard */,
 				B9528D451E822522008EDFE0 /* Controllers */,
@@ -144,6 +151,8 @@
 				B9528D4C1E824316008EDFE0 /* ScenesViewController.swift */,
 				B9528D4A1E8242D1008EDFE0 /* MapViewController.swift */,
 				B9528D481E823162008EDFE0 /* AnimeViewController.swift */,
+				B9D240D71E971723005923EC /* ScenesFromMapViewController.swift */,
+				B9D240D91E9719B4005923EC /* RegionCollectionViewCell.swift */,
 			);
 			name = Controllers;
 			path = ..;
@@ -217,6 +226,7 @@
 				TargetAttributes = {
 					B9528D0E1E821772008EDFE0 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = R96L4Q68PH;
 						ProvisioningStyle = Automatic;
 					};
 					B9528D251E821773008EDFE0 = {
@@ -287,7 +297,10 @@
 				B9528D4B1E8242D1008EDFE0 /* MapViewController.swift in Sources */,
 				B9528D491E823162008EDFE0 /* AnimeViewController.swift in Sources */,
 				B9528D151E821773008EDFE0 /* ViewController.swift in Sources */,
+				B9D240DA1E9719B4005923EC /* RegionCollectionViewCell.swift in Sources */,
+				B9D240D81E971723005923EC /* ScenesFromMapViewController.swift in Sources */,
 				B9528D4D1E824316008EDFE0 /* ScenesViewController.swift in Sources */,
+				B9D240D61E971032005923EC /* animeLocations.swift in Sources */,
 				B9528D131E821773008EDFE0 /* AppDelegate.swift in Sources */,
 				B9528D1B1E821773008EDFE0 /* Anime_In_Life.xcdatamodeld in Sources */,
 			);
@@ -441,6 +454,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = R96L4Q68PH;
 				INFOPLIST_FILE = "Anime In Life/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "nan.Anime-In-Life";
@@ -453,6 +467,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = R96L4Q68PH;
 				INFOPLIST_FILE = "Anime In Life/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "nan.Anime-In-Life";
@@ -534,6 +549,7 @@
 				B9528D3C1E821773008EDFE0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B9528D3D1E821773008EDFE0 /* Build configuration list for PBXNativeTarget "Anime In LifeTests" */ = {
 			isa = XCConfigurationList;
@@ -542,6 +558,7 @@
 				B9528D3F1E821773008EDFE0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B9528D401E821773008EDFE0 /* Build configuration list for PBXNativeTarget "Anime In LifeUITests" */ = {
 			isa = XCConfigurationList;
@@ -550,6 +567,7 @@
 				B9528D421E821773008EDFE0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

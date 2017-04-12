@@ -1,15 +1,15 @@
 //
-//  ScenesViewController.swift
+//  ScenesFromMapViewController.swift
 //  Anime In Life
 //
-//  Created by nancy on 3/21/17.
+//  Created by nancy on 4/6/17.
 //  Copyright © 2017 nan. All rights reserved.
 //
 
 import UIKit
 
-class ScenesViewController:UIViewController{
-
+class ScenesFromMapViewController:UIViewController{
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -18,5 +18,5 @@ class ScenesViewController:UIViewController{
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
+    
 }
