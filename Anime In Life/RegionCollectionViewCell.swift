@@ -6,12 +6,11 @@
 //  Copyright © 2017 nan. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class RegionCollectionViewCell: UICollectionViewCell{
 
     @IBOutlet weak var EnglishName: UILabel!
-    
+    @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var JapaneseName: UILabel!
 }

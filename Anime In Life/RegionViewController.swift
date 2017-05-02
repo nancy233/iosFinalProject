@@ -7,17 +7,49 @@
 //
 
 import UIKit
+import Firebase
+
+struct prefec{
+    let name: String!
+    let Japanese: String!
+    let image: UIImage!
+}
 
 class RegionViewController:UIViewController,UICollectionViewDelegate, UICollectionViewDataSource{
 
     @IBOutlet weak var RegionCollections: UICollectionView!
     
     var chosenPrefec:String?
+    var prefectures = [prefec]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         RegionCollections.delegate = self
         RegionCollections.dataSource = self
+        
+        let dbRef = FIRDatabase.database().reference()
+        dbRef.child("Region").observeSingleEvent(of: .value, with: {snapshot in
+            if snapshot.exists(){
+                let pre = snapshot.value as! [String: [String: Any]]
+                let sortedKeys = Array(pre.keys).sorted()
+                for key in sortedKeys{
+                    let Japanese = pre[key]?["Japanese"] as! String
+                    
+                    // url to image
+                    let url = URL(string: pre[key]?["Image"] as! String)
+                    let imageData = NSData(contentsOf:url!)
+                    let image = UIImage(data: imageData as! Data)
+                    
+                    let newPre = prefec(name: key, Japanese: Japanese, image: image)
+                    self.prefectures.append(newPre)
+                }
+                self.RegionCollections.reloadData()
+                
+            }else{
+                print("Region not exist")
+            }
+        })
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -25,20 +57,19 @@ class RegionViewController:UIViewController,UICollectionViewDelegate, UICollecti
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return Prefectures.count
+        return prefectures.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "regionCell", for: indexPath) as! RegionCollectionViewCell
-        cell.EnglishName.text = EnglishNames[indexPath.row]
-        cell.JapaneseName.text = JapaneseNames[indexPath.row]
-        cell.backgroundColor = UIColor.cyan
-
+        cell.EnglishName.text = prefectures[indexPath.row].name
+        cell.JapaneseName.text = prefectures[indexPath.row].Japanese
+        cell.image.image = prefectures[indexPath.row].image
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        chosenPrefec = EnglishNames[indexPath.row]
+        chosenPrefec = prefectures[indexPath.row].name
         performSegue(withIdentifier: "RegionToMap", sender: self)
     }
     
@@ -47,7 +78,6 @@ class RegionViewController:UIViewController,UICollectionViewDelegate, UICollecti
         if segue.identifier == "RegionToMap" {
             if let dest = segue.destination as? MapViewController {
                 dest.prefec = chosenPrefec
-                print(chosenPrefec)
             }
         }
         
