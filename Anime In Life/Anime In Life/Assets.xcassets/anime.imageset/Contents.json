@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "飞弹市.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "anime.png",
       "scale" : "2x"
     },
     {

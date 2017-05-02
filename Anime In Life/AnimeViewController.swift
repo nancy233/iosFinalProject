@@ -11,7 +11,7 @@ import Firebase
 
 struct anime{
     let name: String!
-    let image: UIImage!
+    let image: URL
 }
 
 class AnimeViewController:UIViewController, UITableViewDelegate, UITableViewDataSource{
@@ -32,13 +32,9 @@ class AnimeViewController:UIViewController, UITableViewDelegate, UITableViewData
         dbRef.child("Animes").observeSingleEvent(of: .value, with: {snapshot in
             if snapshot.exists(){
                 let myVal = snapshot.value as! [String:[String:Any]]
-                print(myVal.keys.count)
                 for key in myVal.keys{
-                    print(key)
                     let url = URL(string: myVal[key]?["Image"] as! String)
-                    let imageData = NSData(contentsOf:url!)
-                    let image = UIImage(data: imageData as! Data)
-                    let newAnime = anime(name: key, image: image)
+                    let newAnime = anime(name: key, image: url!)
                     self.animes.append(newAnime)
                 }
                 self.animeTable.reloadData()
@@ -53,14 +49,15 @@ class AnimeViewController:UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(animes.count)
         return animes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = animeTable.dequeueReusableCell(withIdentifier: "animeTableCell") as! AnimeTableViewCell
         cell.name.text = animes[indexPath.row].name
-        cell.animeImage.image = animes[indexPath.row].image
+        let imageData = NSData(contentsOf:animes[indexPath.row].image)
+        let image = UIImage(data: imageData as! Data)
+        cell.animeImage.image = image
         return cell
     }
     

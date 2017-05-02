@@ -314,11 +314,13 @@
             </objects>
             <point key="canvasLocation" x="-1379" y="-224"/>
         </scene>
-        <!--Item 1-->
+        <!--Navigation Controller-->
         <scene sceneID="K2e-Hp-Ezm">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sjv-bk-hjt" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="kTJ-Ie-CFc"/>
+                    <tabBarItem key="tabBarItem" title="" image="map" selectedImage="map" id="kTJ-Ie-CFc">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hf0-D6-13r">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -333,11 +335,13 @@
             </objects>
             <point key="canvasLocation" x="-426.39999999999998" y="-551.87406296851577"/>
         </scene>
-        <!--Item 2-->
+        <!--Navigation Controller-->
         <scene sceneID="bEs-hg-ueU">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uLe-G0-9Pg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 2" id="uTJ-pV-rEc"/>
+                    <tabBarItem key="tabBarItem" title="" image="anime" selectedImage="anime" id="uTJ-pV-rEc">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6at-lO-ggm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -353,4 +357,8 @@
             <point key="canvasLocation" x="-426.39999999999998" y="103.89805097451276"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="anime" width="40" height="40"/>
+        <image name="map" width="40" height="40"/>
+    </resources>
 </document>

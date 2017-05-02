@@ -21,6 +21,7 @@ class ScenesViewController:UIViewController, UITableViewDelegate, UITableViewDat
         super.viewDidLoad()
         scenesTable.delegate = self
         scenesTable.dataSource = self
+        self.title = anime!
         
         let dbRef = FIRDatabase.database().reference()
         dbRef.child("Animes").child(anime!).child("Locations").observeSingleEvent(of: .value, with: {snapshot in

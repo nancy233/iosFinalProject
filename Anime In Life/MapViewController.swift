@@ -24,8 +24,8 @@ class MapViewController:UIViewController, MKMapViewDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         Map.delegate = self
+        self.title = prefec!
         
         let dbRef = FIRDatabase.database().reference()
         dbRef.child("Region").child(prefec!).child("Locations").observeSingleEvent(of: .value, with: {snapshot in
@@ -34,10 +34,9 @@ class MapViewController:UIViewController, MKMapViewDelegate{
                 for key in myLoc.keys{
                     let latitude = myLoc[key]?["latitude"] as! CLLocationDegrees
                     let longitude = myLoc[key]?["longitude"] as! CLLocationDegrees
-                    //let newLoc = location(latitude: <#String!#>, longitude: <#String!#>)
                     let location = CLLocationCoordinate2DMake(latitude, longitude)
                     
-                    let span = MKCoordinateSpanMake(0.2, 0.2)
+                    let span = MKCoordinateSpanMake(0.5, 0.5)
                     let region = MKCoordinateRegion(center:location, span:span)
                     self.Map.setRegion(region, animated: true)
                     let annotation = MKPointAnnotation()

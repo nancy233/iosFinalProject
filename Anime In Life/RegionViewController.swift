@@ -12,7 +12,7 @@ import Firebase
 struct prefec{
     let name: String!
     let Japanese: String!
-    let image: UIImage!
+    let image: URL
 }
 
 class RegionViewController:UIViewController,UICollectionViewDelegate, UICollectionViewDataSource{
@@ -34,13 +34,8 @@ class RegionViewController:UIViewController,UICollectionViewDelegate, UICollecti
                 let sortedKeys = Array(pre.keys).sorted()
                 for key in sortedKeys{
                     let Japanese = pre[key]?["Japanese"] as! String
-                    
-                    // url to image
                     let url = URL(string: pre[key]?["Image"] as! String)
-                    let imageData = NSData(contentsOf:url!)
-                    let image = UIImage(data: imageData as! Data)
-                    
-                    let newPre = prefec(name: key, Japanese: Japanese, image: image)
+                    let newPre = prefec(name: key, Japanese: Japanese, image: url!)
                     self.prefectures.append(newPre)
                 }
                 self.RegionCollections.reloadData()
@@ -64,7 +59,9 @@ class RegionViewController:UIViewController,UICollectionViewDelegate, UICollecti
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "regionCell", for: indexPath) as! RegionCollectionViewCell
         cell.EnglishName.text = prefectures[indexPath.row].name
         cell.JapaneseName.text = prefectures[indexPath.row].Japanese
-        cell.image.image = prefectures[indexPath.row].image
+        let imageData = NSData(contentsOf:prefectures[indexPath.row].image)
+        let image = UIImage(data: imageData as! Data)
+        cell.image.image = image
         return cell
     }
     
