@@ -19,6 +19,8 @@
 		B9528D491E823162008EDFE0 /* AnimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9528D481E823162008EDFE0 /* AnimeViewController.swift */; };
 		B9528D4B1E8242D1008EDFE0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9528D4A1E8242D1008EDFE0 /* MapViewController.swift */; };
 		B98A0FF31EB81E890077119D /* ScenesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98A0FF21EB81E890077119D /* ScenesViewController.swift */; };
+		B98A0FF51EB98E130077119D /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98A0FF41EB98E130077119D /* LogInViewController.swift */; };
+		B98A0FF71EB98E210077119D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98A0FF61EB98E210077119D /* SignUpViewController.swift */; };
 		B98E95501EB6E13E0087F522 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B98E954F1EB6E13E0087F522 /* GoogleService-Info.plist */; };
 		B9B36F781EB7EF83008DF68D /* AnimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B36F771EB7EF83008DF68D /* AnimeTableViewCell.swift */; };
 		B9B36F7A1EB7F051008DF68D /* TheSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B36F791EB7F051008DF68D /* TheSceneViewController.swift */; };
@@ -64,6 +66,8 @@
 		B9528D481E823162008EDFE0 /* AnimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimeViewController.swift; sourceTree = "<group>"; };
 		B9528D4A1E8242D1008EDFE0 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B98A0FF21EB81E890077119D /* ScenesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScenesViewController.swift; sourceTree = "<group>"; };
+		B98A0FF41EB98E130077119D /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		B98A0FF61EB98E210077119D /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		B98E954F1EB6E13E0087F522 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B9B36F771EB7EF83008DF68D /* AnimeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimeTableViewCell.swift; sourceTree = "<group>"; };
 		B9B36F791EB7F051008DF68D /* TheSceneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheSceneViewController.swift; sourceTree = "<group>"; };
@@ -165,6 +169,8 @@
 		B9528D451E822522008EDFE0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B98A0FF41EB98E130077119D /* LogInViewController.swift */,
+				B98A0FF61EB98E210077119D /* SignUpViewController.swift */,
 				B9528D461E822550008EDFE0 /* RegionViewController.swift */,
 				B9D240D91E9719B4005923EC /* RegionCollectionViewCell.swift */,
 				B9528D4A1E8242D1008EDFE0 /* MapViewController.swift */,
@@ -383,8 +389,10 @@
 				B9B36F781EB7EF83008DF68D /* AnimeTableViewCell.swift in Sources */,
 				B9B36F7A1EB7F051008DF68D /* TheSceneViewController.swift in Sources */,
 				B98A0FF31EB81E890077119D /* ScenesViewController.swift in Sources */,
+				B98A0FF51EB98E130077119D /* LogInViewController.swift in Sources */,
 				B9528D131E821773008EDFE0 /* AppDelegate.swift in Sources */,
 				B9B36F7C1EB7F14C008DF68D /* ScenesTableViewCell.swift in Sources */,
+				B98A0FF71EB98E210077119D /* SignUpViewController.swift in Sources */,
 				B9528D1B1E821773008EDFE0 /* Anime_In_Life.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
