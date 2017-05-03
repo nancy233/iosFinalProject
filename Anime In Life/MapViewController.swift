@@ -36,7 +36,7 @@ class MapViewController:UIViewController, MKMapViewDelegate{
                     let longitude = myLoc[key]?["longitude"] as! CLLocationDegrees
                     let location = CLLocationCoordinate2DMake(latitude, longitude)
                     
-                    let span = MKCoordinateSpanMake(0.5, 0.5)
+                    let span = MKCoordinateSpanMake(1, 1)
                     let region = MKCoordinateRegion(center:location, span:span)
                     self.Map.setRegion(region, animated: true)
                     let annotation = MKPointAnnotation()
