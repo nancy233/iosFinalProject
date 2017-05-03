@@ -32,7 +32,8 @@ class AnimeViewController:UIViewController, UITableViewDelegate, UITableViewData
         dbRef.child("Animes").observeSingleEvent(of: .value, with: {snapshot in
             if snapshot.exists(){
                 let myVal = snapshot.value as! [String:[String:Any]]
-                for key in myVal.keys{
+                let sorted = myVal.keys.sorted()
+                for key in sorted{
                     let url = URL(string: myVal[key]?["Image"] as! String)
                     let newAnime = anime(name: key, image: url!)
                     self.animes.append(newAnime)
